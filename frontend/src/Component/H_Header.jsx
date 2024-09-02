@@ -38,7 +38,6 @@ function Navbar() {
           <div className="hidden lg:flex lg:flex-1 lg:justify-end space-x-6">
           <button onClick={() => scrollToSection('home')} className="text-sm font-semibold leading-6 text-gray-900">Home</button>
             <button onClick={() => scrollToSection('about-us')} className="text-sm font-semibold leading-6 text-gray-900">About Us</button>
-            <button onClick={() => scrollToSection('features')} className="text-sm font-semibold leading-6 text-gray-900">Features</button>
             <button onClick={() => scrollToSection('teams')} className="text-sm font-semibold leading-6 text-gray-900">Teams</button>
             <a href="/start" className="text-sm font-extrabold leading-6 text-gray-900 ">Try it!</a>
           </div>
@@ -49,7 +48,6 @@ function Navbar() {
           <div className="lg:hidden mt-2 space-y-2 p-4 bg-white shadow-md">
             <button onClick={() => scrollToSection('home')} className="block text-sm font-semibold leading-6 text-gray-900">Home</button>
             <button onClick={() => scrollToSection('about-us')} className="block text-sm font-semibold leading-6 text-gray-900">About Us</button>
-            <button onClick={() => scrollToSection('features')} className="block text-sm font-semibold leading-6 text-gray-900">Features</button>
             <button onClick={() => scrollToSection('teams')} className="block text-sm font-semibold leading-6 text-gray-900">Teams</button>
             <a href="/start" className="block text-sm font-extrabold leading-6 text-gray-900">Try it!</a>
           </div>

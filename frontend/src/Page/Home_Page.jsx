@@ -1,6 +1,7 @@
 import Navbar from "../Component/H_Header";
-import ChatGPTLogo from "../assets/ChatGPT_logo.png";
+import Dimas from "../assets/dimas.png"
 import Harry from "../assets/harry.jpg"
+import Willy from "../assets/willy.jpg"
 import CopyRight from "../Component/HSA_Footer";
 
 function Home_Page(){
@@ -40,28 +41,6 @@ function Home_Page(){
                 </div>
             </div>
 
-            {/* Features */}
-            <h1 id="features" className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 text-center">Features</h1>
-            <div className="flex justify-center items-center px-4 sm:px-8 lg:px-16 xl:px-32 py-12 bg-transparent">
-            <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-lg overflow-hidden max-w-3xl">
-                {/* Gambar */}
-                <div className="w-full md:w-1/2 flex justify-center items-center">
-                <img 
-                    src= {ChatGPTLogo}
-                    alt="Feature" 
-                    className="object-cover w-[300px] h-[300px]"
-                />
-                </div>
-                {/* Teks */}
-                <div className="w-full md:w-1/2 p-4 flex items-center">
-                <div>
-                    <h2 className="text-xl font-bold text-gray-800 mb-2">Fine-Tuned Chat GPT-3-5</h2>
-                    <p className="text-gray-700 text-justify">Leverage the power of fine-tuned GPT-3.5 to prepare for your interviews with customized questions and feedback. Our AI adapts to your job role and experience level, providing personalized practice that aligns with real-world interview scenarios. Whether you're refining technical skills or mastering behavioral questions, this feature ensures your preparation is precise and relevant.</p>
-                </div>
-                </div>
-            </div>
-            </div>
-
             {/* Teams */}
             <h1 id="teams" className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 text-center">Teams</h1>
             <div className="container mx-auto px-4">
@@ -71,13 +50,13 @@ function Home_Page(){
                         <div className="bg-white p-6 text-center rounded-lg shadow-lg">
                             <div className="bg-pink-300 mb-4 flex items-center justify-center">
                             <img 
-                            src= {Harry}
+                            src= {Willy}
                             alt="Team" 
-                            className="object-cover w-full h-full"
+                            className="object-cover w-[510px] h-[400px]"
                             />
                             </div>
-                            <h3 className="text-lg font-semibold">Team's Name</h3>
-                            <p className="text-sm text-gray-600">Team's Bidang</p>
+                            <h3 className="text-lg font-semibold">Willy Wijaya</h3>
+                            <p className="text-sm text-gray-600">Model</p>
                         </div>
                     </div>
                     {/* Repeat the card for additional team members */}
@@ -87,11 +66,11 @@ function Home_Page(){
                             <img 
                             src= {Harry}
                             alt="Team" 
-                            className="object-cover w-full h-full"
+                            className="object-cover w-[510px] h-[400px]"
                             />
                             </div>
-                            <h3 className="text-lg font-semibold">Team's Name</h3>
-                            <p className="text-sm text-gray-600">Team's Bidang</p>
+                            <h3 className="text-lg font-semibold">Harry Sanjaya</h3>
+                            <p className="text-sm text-gray-600">FrontEnd</p>
                         </div>
                     </div>
 
@@ -99,13 +78,13 @@ function Home_Page(){
                         <div className="bg-white p-6 text-center rounded-lg shadow-lg">
                             <div className="bg-pink-300 mb-4 flex items-center justify-center">
                             <img 
-                            src= {Harry}
+                            src= {Dimas}
                             alt="Team" 
-                            className="object-cover w-full h-full"
+                            className="object-cover w-[510px] h-[400px]"
                             />
                             </div>
-                            <h3 className="text-lg font-semibold">Team's Name</h3>
-                            <p className="text-sm text-gray-600">Team's Bidang</p>
+                            <h3 className="text-lg font-semibold">Dhimas Fauzan Al-Asri</h3>
+                            <p className="text-sm text-gray-600">BackEnd</p>
                         </div>
                     </div>
                 </div>

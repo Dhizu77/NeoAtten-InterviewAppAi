@@ -30,7 +30,6 @@ function Navbar() {
           <div className="hidden lg:flex lg:flex-1 lg:justify-end space-x-6">
             <a href="/home" className="text-sm font-semibold leading-6 text-gray-900">Home</a>
             <a href="/home" className="text-sm font-semibold leading-6 text-gray-900">About Us</a>
-            <a href="/home" className="text-sm font-semibold leading-6 text-gray-900">Features</a>
             <a href="/home" className="text-sm font-semibold leading-6 text-gray-900">Teams</a>
           </div>
         </nav>
@@ -40,7 +39,6 @@ function Navbar() {
           <div className="lg:hidden mt-2 space-y-2 p-4 bg-white shadow-md">
             <a href="/home" className="block text-sm font-semibold leading-6 text-gray-900">Home</a>
             <a href="/home" className="block text-sm font-semibold leading-6 text-gray-900">About Us</a>
-            <a href="/home" className="block text-sm font-semibold leading-6 text-gray-900">Features</a>
             <a href="/home" className="block text-sm font-semibold leading-6 text-gray-900">Teams</a>
           </div>
         )}
