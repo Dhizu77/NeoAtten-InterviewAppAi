@@ -7,11 +7,11 @@ import Navbar from '../Component/SA_Header.jsx';
 
 
 function ActionPage() {
+  const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
   const location = useLocation();
   const { jobDescription, BahasaInterview } = location.state;
   const [language, setLanguage] = useState('id-ID');
   const [voice, setVoice] = useState(null);
-
   useEffect(() => {
     if (BahasaInterview === "Indonesia") {
       setLanguage('id-ID'); // Set to id-IDn
@@ -50,7 +50,7 @@ function ActionPage() {
     {
       role: "system",
       content: `
-This interview will be conducted in ${BahasaInterview}. You are an interviewer for a company with a job description as ${jobDescription || "No job description available"}. Your task is to assess candidates by asking relevant and frequent questions and testing their knowledge in their field. Start with an introduction, then proceed to their experience, technical skills, and problem-solving abilities. Ensure you challenge them with scenario-based and knowledge-specific questions. Conclude by asking if they have any questions for you.
+This interview will be conducted in ${BahasaInterview}. You are a friendly interviewer for a company with a job description as ${jobDescription || "No job description available"}. Your task is to assess candidates by asking relevant and frequent questions and testing their knowledge in their field. Start with an introduction, then proceed to their experience, technical skills, and problem-solving abilities. Ensure you challenge them with scenario-based questions. Conclude by asking if they have any questions for you.
 
 1. **Language**: Conduct the entire interview in the specified language (${BahasaInterview}) without switching to another language at any point.
 
@@ -79,6 +79,7 @@ Remember:
 
   const stopListening=()=>{
     SpeechRecognition.stopListening();
+    handleSendToApi()
     setIsRecording(false)
   }
   const speakText = (text) => {
@@ -110,7 +111,7 @@ Remember:
         presence_penalty: 0
       }, {
         headers: {
-          'Authorization': '',
+          'Authorization': apiKey,
           'Content-Type': 'application/json'
         }
       });
@@ -228,10 +229,7 @@ Remember:
                     </div>
 
                     <div>
-                    <button onClick={handleSendToApi}
-                      className="rounded-md bg-indigo-600 px-4 py-2 text-lg font-medium text-white shadow-md hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                      Send Message
-                    </button>
+                    
                     </div>
                     </>
                   )}
