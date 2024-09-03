@@ -16,7 +16,7 @@ function Home_Page(){
                 </h5>
                 
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-black mb-4">
-                    InterNeo.Ai
+                    InterNeoAi
                 </h1>
                 
                 <p className="text-lg sm:text-xl text-gray-700 mb-6">
@@ -84,7 +84,7 @@ function Home_Page(){
                             />
                             </div>
                             <h3 className="text-lg font-semibold">Dhimas Fauzan Al-Asri</h3>
-                            <p className="text-sm text-gray-600">BackEnd</p>
+                            <p className="text-sm text-gray-600">Product Manager</p>
                         </div>
                     </div>
                 </div>

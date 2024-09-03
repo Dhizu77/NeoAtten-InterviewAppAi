@@ -13,7 +13,7 @@ function Navbar() {
         <nav aria-label="Global" className="flex items-center justify-between p-4 lg:p-6 lg:px-8">
           
           <div className="flex flex-1 items-center justify-between">
-            <h1 className="text-xl md:text-2xl font-bold text-black">InterNeo.AI</h1>
+            <h1 className="text-xl md:text-2xl font-bold text-black">InterNeoAI</h1>
             {/* Mobile menu button */}
             <div className="lg:hidden">
               <button

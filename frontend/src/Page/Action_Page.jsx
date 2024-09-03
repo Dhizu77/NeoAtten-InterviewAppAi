@@ -58,9 +58,12 @@ This interview will be conducted in ${BahasaInterview}. You are a friendly inter
 
 3. **Focus**: Stay within the scope of the job description provided (${jobDescription || "No job description available"}) and assess the candidate's suitability based on that.
 
+4. **Name Handling**: Your name is Neo as the interviewer. Do not output your name "Neo:" before your responses. Simply respond with the content of the interview.
+
 Remember:
 - Use the language specified ${BahasaInterview} throughout the entire interview.
 - Only output the string "STOP" if the interview needs to end prematurely, without any other text or context.
+- Do not prepend your name to any of your responses.
 `
     }
   ];
@@ -205,7 +208,7 @@ Remember:
                         }}
                         onMouseEnter={() => {
                           const tooltip = document.createElement('div');
-                          tooltip.innerText = 'Press Space for Start/Stop, Press Enter for Send Message';
+                          tooltip.innerText = 'Press Space to Begin, and Press it again to Send';
                           tooltip.className = 'absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 px-2 py-1 text-sm bg-black text-white rounded whitespace-nowrap';
                           document.querySelector('.tooltip-anchor').appendChild(tooltip);
 
