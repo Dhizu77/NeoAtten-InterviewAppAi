@@ -27,7 +27,7 @@ function ActionPage() {
       let selectedVoice;
       if (language === 'id-ID') {
         // Choose Indonesian voice
-        selectedVoice = voices.find(v => v.lang === 'id-ID');
+        selectedVoice = voices.find(v => v.lang === 'id-ID') || voices[0];
       } else {
         // Choose English voice
         selectedVoice = voices.find(v => v.lang.startsWith('en')) || voices[0];
