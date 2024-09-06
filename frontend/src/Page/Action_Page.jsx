@@ -34,11 +34,17 @@ function ActionPage() {
       }
       setVoice(selectedVoice);
     };
+  
+    // If voices are already loaded, we call loadVoices right away
+    if (synth.getVoices().length > 0) {
+      loadVoices();
+    }
+  
+    // Listen for the voiceschanged event in case voices load asynchronously
     if (synth.onvoiceschanged !== undefined) {
       synth.onvoiceschanged = loadVoices;
     }
-    loadVoices();
-  }, [language]);
+  }, [language]);  
 
   const {transcript, browserSupportsSpeechRecognition, resetTranscript} = useSpeechRecognition();
   const [interviewStarted, setInterviewStarted] = useState(false);
@@ -88,14 +94,26 @@ function ActionPage() {
     handleSendToApi()
     setIsRecording(false)
   }
+
   const speakText = (text) => {
     if (!voice) return; // Prevent speaking if no voice is selected
-
+  
+    // Stop any ongoing speech to prevent overlap
+    if (window.speechSynthesis.speaking) {
+      window.speechSynthesis.cancel();
+    }
+  
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.voice = voice;
+  
+    // Add an event listener to handle speech errors
+    utterance.onerror = (e) => {
+      console.error('SpeechSynthesisUtterance error:', e);
+    };
+  
     window.speechSynthesis.speak(utterance);
   };
-
+    
   const handleSendToApi = async () => {
     if (interviewEnded) {
       return;
@@ -107,6 +125,7 @@ function ActionPage() {
       } else {
         newConversation.push({ role: "user", content: transcript });
       }
+  
       const response = await axios.post('https://api.openai.com/v1/chat/completions', {
         model: "ft:gpt-3.5-turbo-1106:personal::A1tMavrf",
         messages: newConversation,
@@ -121,19 +140,24 @@ function ActionPage() {
           'Content-Type': 'application/json'
         }
       });
+  
       const apiResponse = response.data.choices[0].message.content;
       if (apiResponse.includes("STOP")) {
         setInterviewEnded(true);
       }
+      
       // Update the current message to show the latest response
       setCurrentMessage(apiResponse);
       setConversationHistory([...newConversation, { role: "assistant", content: apiResponse }]);
       resetTranscript();
+  
+      // Ensure text is spoken after the response is updated
       speakText(apiResponse);
     } catch (error) {
       console.error("Error communicating with API:", error);
     }
   };
+  
 
   useEffect(() => {
     const handleKeyDown = (event) => {
