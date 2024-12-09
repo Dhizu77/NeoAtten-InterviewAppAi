@@ -1,6 +1,9 @@
 function CopyRight() {
     return (
-        <p className="text-left font-bold text-black ml-1 bg"> © 2024 NeoAtten</p>
+        <p className="text-left font-bold text-white ml-1">
+  &copy; 2024 ExpressInEnglish
+</p>
+
     );
 }
 
